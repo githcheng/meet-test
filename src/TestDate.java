@@ -1,3 +1,4 @@
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 /**
@@ -5,8 +6,21 @@ import java.util.Date;
  */
 public class TestDate {
 
+
+
     public static void main(String[] args){
+
+
+        TestDate service = new TestDate();
         Date date = new Date();
-        System.out.println(date);
+
+        String s = service.formatDate(date);
+        System.out.println(s);
+    }
+
+    private String formatDate(Date date){
+        SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd  HH:mm:ss");
+        String dateString = format.format(date);
+        return dateString;
     }
 }
