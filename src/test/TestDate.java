@@ -1,5 +1,6 @@
 package test;
 
+import java.io.*;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
@@ -24,5 +25,24 @@ public class TestDate {
         SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd  HH:mm:ss");
         String dateString = format.format(date);
         return dateString;
+    }
+
+    private void readFile(String fileName) {
+        try {
+            FileReader fileReader = new FileReader(fileName);
+            BufferedReader br = new BufferedReader(fileReader);
+            String s = null;
+            while((s=br.readLine()) != null){
+                s = br.readLine();
+                System.out.println(s);
+            }
+            br.close();
+            fileReader.close();
+        } catch (FileNotFoundException e) {
+            System.out.println(e);
+        } catch (IOException e){
+            System.out.println(e);
+        }
+
     }
 }
