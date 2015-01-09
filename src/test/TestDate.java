@@ -1,5 +1,6 @@
 package test;
 
+import java.io.FileWriter;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
@@ -24,5 +25,10 @@ public class TestDate {
         SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd  HH:mm:ss");
         String dateString = format.format(date);
         return dateString;
+    }
+
+    private int writeFile(String fileName){
+        FileWriter fileWriter = null;
+        return 0;
     }
 }
